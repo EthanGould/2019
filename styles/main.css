@@ -1,0 +1,89 @@
+body {
+  margin: 0; }
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+
+.section {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 2fr 60px;
+  height: 100vh;
+  width: 100vw;
+  background: #474747; }
+  .section--fade {
+    background-image: url("../images/ethan-jump.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top right 30%; }
+    .section--fade:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      top: 0;
+      background: linear-gradient(145deg, #474747, rgba(71, 71, 71, 0.8) 30%, transparent); }
+  .section__header {
+    padding: 40px 30px;
+    grid-row-start: 1; }
+  .section__header-text {
+    display: inline-block;
+    margin-bottom: 10px;
+    opacity: 0;
+    color: #fff;
+    font-size: 32px;
+    border-bottom: 3px solid #fff;
+    animation-name: fade-in;
+    animation-duration: 1s;
+    animation-delay: 1s;
+    animation-fill-mode: forwards; }
+    .section__header-text:last-child {
+      animation-delay: 2s; }
+  .section__footer {
+    grid-row-start: 3;
+    align-self: center; }
+  .section__footer-list {
+    display: flex;
+    justify-content: space-evenly; }
+  .section__footer-item {
+    flex-grow: 1;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(50px);
+    animation-name: fade-up;
+    animation-delay: 3.125s;
+    animation-duration: 1s;
+    animation-fill-mode: forwards; }
+    .section__footer-item:first-child {
+      animation-delay: 3s; }
+    .section__footer-item:last-child {
+      animation-delay: 3.25s; }
+  .section__footer-icon {
+    width: 30px;
+    fill: white;
+    filter: drop-shadow(0 0 5px #474747); }
+  .section__footer-item-label {
+    text-align: center;
+    position: absolute;
+    top: -20px;
+    left: 0;
+    right: 0; }
+
+@media (min-width: 768px) {
+  .section__header {
+    padding: 60px 100px; }
+  .section__header-text {
+    font-size: 46px;
+    margin-bottom: 30px; } }
+@keyframes fade-in {
+  to {
+    opacity: 1; } }
+@keyframes fade-up {
+  to {
+    transform: translateY(0);
+    opacity: 1; } }
+
+/*# sourceMappingURL=main.css.map */
