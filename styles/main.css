@@ -17,15 +17,15 @@ ul {
     background-image: url("../images/ethan-jump.JPG");
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: top right 30%; }
-    .section--fade:before {
+    background-position: top right 30%;
+    position: relative; }
+    .section--fade::before {
       content: "";
       position: absolute;
       left: 0;
       right: 0;
       bottom: 0;
-      top: 0;
-      background: linear-gradient(145deg, #474747, rgba(71, 71, 71, 0.8) 30%, transparent); }
+      top: 0; }
   .section__header {
     padding: 40px 30px;
     grid-row-start: 1; }
@@ -36,8 +36,9 @@ ul {
     color: #fff;
     font-size: 32px;
     border-bottom: 3px solid #fff;
+    transform: scale(0);
     animation-name: fade-in;
-    animation-duration: 1s;
+    animation-duration: 0.5s;
     animation-delay: 1s;
     animation-fill-mode: forwards; }
     .section__header-text:last-child {
@@ -79,6 +80,26 @@ ul {
       opacity: 1;
       transition: transform 1s, opacity 1s; }
 
+.accordion {
+  grid-row-start: 2;
+  align-self: center;
+  padding: 40px 30px;
+  opacity: 0;
+  animation-name: fade-in;
+  animation-duration: 0.5s;
+  animation-delay: 3s;
+  animation-fill-mode: forwards; }
+  .accordion__list {
+    height: 37px;
+    overflow: hidden; }
+  .accordion__item {
+    color: #fff;
+    font-size: 32px;
+    animation-name: scroll;
+    animation-duration: 5s;
+    animation-delay: 4s;
+    animation-iteration-count: infinite; }
+
 @media (min-width: 768px) {
   .section__header {
     padding: 60px 100px; }
@@ -89,10 +110,24 @@ ul {
     width: 20px; } }
 @keyframes fade-in {
   to {
-    opacity: 1; } }
+    opacity: 1;
+    transform: scale(1); } }
 @keyframes fade-up {
   to {
     transform: translateY(0);
     opacity: 1; } }
+@keyframes scroll {
+  0% {
+    transform: translateY(0); }
+  15% {
+    transform: translateY(0); }
+  25% {
+    transform: translateY(-100%); }
+  40% {
+    transform: translateY(-100%); }
+  50% {
+    transform: translateY(-200%); }
+  100% {
+    transform: translateY(-300%); } }
 
 /*# sourceMappingURL=main.css.map */

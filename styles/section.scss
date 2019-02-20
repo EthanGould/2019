@@ -11,15 +11,16 @@
 		background-size: cover;
 		background-repeat: no-repeat;
 		background-position: top right 30%;
+		position: relative;
 
-		&:before {
+		&::before {
 			content: "";
 			position: absolute;
 			left: 0;
 			right: 0;
 			bottom: 0;
 			top: 0;
-			background: linear-gradient(145deg, $black, rgba($black, 0.8) 30%, transparent);
+			// background: linear-gradient(145deg, $black, rgba($black, 0.8) 30%, transparent);
 		}
 	}
 
@@ -35,9 +36,10 @@
 		color: $white;
 		font-size: 32px;
 		border-bottom: 3px solid $white;
+		transform: scale(0);
 
 		animation-name: fade-in;
-		animation-duration: 1s;
+		animation-duration: 0.5s;
 		animation-delay: 1s;
 		animation-fill-mode: forwards;
 
@@ -100,6 +102,32 @@
 	}
 }
 
+.accordion {
+	grid-row-start: 2;
+	align-self: center;
+	padding: 40px 30px;
+	opacity: 0;
+
+	animation-name: fade-in;
+	animation-duration: 0.5s;
+	animation-delay: 3s;
+	animation-fill-mode: forwards;
+
+	&__list {
+		height: 37px;
+		overflow: hidden;
+	}
+
+	&__item {
+		color: $white;
+		font-size: 32px;
+		animation-name: scroll;
+		animation-duration: 5s;
+		animation-delay: 4s;
+		animation-iteration-count: infinite;
+	}
+}
+
 @media (min-width: 768px) {
 	.section {
 		&__header {
@@ -120,6 +148,7 @@
 @keyframes fade-in {
 	to {
 		opacity: 1;
+		transform: scale(1);
 	}
 }
 
@@ -129,4 +158,47 @@
 		opacity: 1;
 	}
 }
+
+@keyframes scroll {
+	0% {
+		transform: translateY(0);
+	}
+
+	15% {
+		transform: translateY(0);
+	}
+
+	25% {
+		transform: translateY(-100%);
+	}
+	
+	40% {
+		transform: translateY(-100%);
+	}
+
+	50% {
+		transform: translateY(-200%);
+	}
+
+	100% {
+		transform: translateY(-300%);
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
