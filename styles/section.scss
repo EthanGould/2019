@@ -1,12 +1,12 @@
 .section {
 	display: grid;
-	grid-template-columns: 1fr;
-	grid-template-rows: 1fr 2fr 60px;
 	height: 100vh;
 	width: 100vw;
 	background: $black;
 
 	&--fade {
+		grid-template-columns: 1fr;
+		grid-template-rows: 1fr 1fr 60px;
 		background-image: url("../images/ethan-jump.JPG");
 		background-size: cover;
 		background-repeat: no-repeat;
@@ -20,7 +20,12 @@
 			right: 0;
 			bottom: 0;
 			top: 0;
-			// background: linear-gradient(145deg, $black, rgba($black, 0.8) 30%, transparent);
+			background: linear-gradient(145deg, $black, rgba($black, 0.8) 30%, transparent);
+		}
+
+		&--quad {
+			grid-template-columns: 1fr;
+			grid-template-rows: 1fr 1fr 1fr 1fr;
 		}
 	}
 
@@ -35,7 +40,6 @@
 		opacity: 0;
 		color: $white;
 		font-size: 32px;
-		border-bottom: 3px solid $white;
 		transform: scale(0);
 
 		animation-name: fade-in;
@@ -47,89 +51,16 @@
 			animation-delay: 2s;
 		}
 	}
-
-	&__footer {
-		grid-row-start: 3;
-		align-self: center;
-	}
-
-	&__footer-list {
-		display: flex;
-		justify-content: space-evenly;
-	}
-
-	&__footer-item {
-		flex-grow: 1;
-		text-align: center;
-		opacity: 0;
-		transform: translateY(50px);
-
-		animation-name: fade-up;
-		animation-delay: 3.125s;
-		animation-duration: 1s;
-		animation-fill-mode: forwards;
-
-		&:first-child {
-			animation-delay: 3s;	
-		}
-
-		&:last-child {
-			animation-delay: 3.25s;
-		}
-	}
-
-	&__footer-icon {
-		width: 30px;
-		fill: white;
-		filter: drop-shadow(0 0 5px $black);
-	}
-
-	&__footer-item-label {
-		opacity: 0;
-		text-align: center;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    color: $white;
-    text-shadow: 0 0 5px $black;
-
-    &:hover {
-    	tranform: translateY(-30px);
-    	opacity: 1;
-    	transition: transform 1s, opacity 1s;
-		}
-	}
-}
-
-.accordion {
-	grid-row-start: 2;
-	align-self: center;
-	padding: 40px 30px;
-	opacity: 0;
-
-	animation-name: fade-in;
-	animation-duration: 0.5s;
-	animation-delay: 3s;
-	animation-fill-mode: forwards;
-
-	&__list {
-		height: 37px;
-		overflow: hidden;
-	}
-
-	&__item {
-		color: $white;
-		font-size: 32px;
-		animation-name: scroll;
-		animation-duration: 5s;
-		animation-delay: 4s;
-		animation-iteration-count: infinite;
-	}
 }
 
 @media (min-width: 768px) {
 	.section {
+
+		&--quad {
+			grid-template-columns: 1fr 1fr;
+			grid-template-rows: 100px 1fr 1fr;
+		}
+
 		&__header {
 			padding: 60px 100px;
 		}
@@ -138,61 +69,8 @@
 			font-size: 46px;
 			margin-bottom: 30px;
 		}
-
-		&__footer-icon {
-			width: 20px;
-		}
 	}
 }
-
-@keyframes fade-in {
-	to {
-		opacity: 1;
-		transform: scale(1);
-	}
-}
-
-@keyframes fade-up {
-	to {
-		transform: translateY(0);
-		opacity: 1;
-	}
-}
-
-@keyframes scroll {
-	0% {
-		transform: translateY(0);
-	}
-
-	15% {
-		transform: translateY(0);
-	}
-
-	25% {
-		transform: translateY(-100%);
-	}
-	
-	40% {
-		transform: translateY(-100%);
-	}
-
-	50% {
-		transform: translateY(-200%);
-	}
-
-	100% {
-		transform: translateY(-300%);
-	}
-}
-
-
-
-
-
-
-
-
-
 
 
 

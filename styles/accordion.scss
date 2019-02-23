@@ -1,0 +1,34 @@
+.accordion {
+	opacity: 0;
+	animation-name: fade-in;
+	animation-duration: 0.5s;
+	animation-delay: 2s;
+	animation-fill-mode: forwards;
+
+	&__list {
+		height: 37px;
+		overflow: hidden;
+	}
+
+	&__item {
+		color: $white;
+		font-size: 32px;
+		animation-name: scroll;
+		animation-duration: 5s;
+		animation-delay: 2s;
+		animation-fill-mode: forwards;
+	}
+}
+
+@media (min-width: 768px) {
+	.accordion {
+
+		&__list {
+			height: 54px;
+		}
+
+		&__item {
+			font-size: 46px;
+		}
+	}
+}

@@ -1,0 +1,43 @@
+.social-footer {
+	grid-row-start: 3;
+	align-self: center;
+
+	&__list {
+		display: flex;
+		justify-content: space-evenly;
+	}
+
+	&__item {
+		flex-grow: 1;
+		text-align: center;
+		opacity: 0;
+		transform: translateY(50px);
+
+		animation-name: fade-up;
+		animation-delay: 5.125s;
+		animation-duration: 1s;
+		animation-fill-mode: forwards;
+
+		&:first-child {
+			animation-delay: 5s;	
+		}
+
+		&:last-child {
+			animation-delay: 5.25s;
+		}
+	}
+
+	&__icon {
+		width: 30px;
+		fill: white;
+		filter: drop-shadow(0 0 5px $black);
+	}
+}
+
+@media (min-width: 768px) {
+	.social-footer {
+		&__icon {
+			width: 20px;
+		}
+	}
+}
