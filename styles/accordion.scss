@@ -18,6 +18,11 @@
 		animation-delay: 2s;
 		animation-fill-mode: forwards;
 	}
+
+	svg {
+		height: 20px;
+		width: 20px;
+	}
 }
 
 @media (min-width: 768px) {
