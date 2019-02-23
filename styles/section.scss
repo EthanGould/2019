@@ -21,7 +21,7 @@
 			right: 0;
 			bottom: 0;
 			top: 0;
-			background: linear-gradient(145deg, $black, rgba($black, 0.8) 30%, transparent);
+			background: linear-gradient(145deg, $black, rgba($black, 0.9) 30%, transparent);
 		}
 	}
 
@@ -55,6 +55,17 @@
 	&__header-subtext {
 		font-size: 16px;
 		line-height: 25px;
+	}
+}
+
+.footer {
+	background: linear-gradient($black, black);
+	padding: 30px;
+	overflow: hidden;
+
+	&__text {
+		color: $white;
+		text-align: center;
 	}
 }
 

@@ -10,20 +10,23 @@
 	&__item {
 		flex-grow: 1;
 		text-align: center;
-		opacity: 0;
-		transform: translateY(50px);
 
-		animation-name: fade-up;
-		animation-delay: 5.125s;
-		animation-duration: 1s;
-		animation-fill-mode: forwards;
+		&--delayed {
+			transform: translateY(50px);
+			opacity: 0;
 
-		&:first-child {
-			animation-delay: 5s;	
-		}
+			animation-name: fade-up;
+			animation-delay: 6.125s;
+			animation-duration: 1s;
+			animation-fill-mode: forwards;
 
-		&:last-child {
-			animation-delay: 5.25s;
+			&:first-child {
+				animation-delay: 6s;	
+			}
+
+			&:last-child {
+				animation-delay: 6.25s;
+			}
 		}
 	}
 
