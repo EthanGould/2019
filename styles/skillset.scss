@@ -1,9 +1,44 @@
 .skillset {
-	background: $white;
+	background: $gray-light;
 	border-radius: 10px;
-	margin: 50px 100px;
+	margin: 10px 30px;
 	padding: 60px;
-	grid-row-start: 2;
+	position: relative;
+
+	&__label {
+		position: absolute;
+    top: -10px;
+    left: -20px;
+    background: #5e5e5e;
+		padding: 5px 30px;
+    border-bottom-right-radius: 30px;
+    background: linear-gradient(45deg, $green, adjust-hue($green, 60%));
+    box-shadow: 2px 1px 10px darken($gray, 40%);
+
+    &::before {
+    	content: '';
+    	border-top: 10px solid $gray;
+    	border-right: 10px solid $gray;
+    	border-bottom: 10px solid transparent;
+    	border-left: 10px solid transparent;
+
+			position: absolute;
+			bottom: -20px;
+			left: 0;
+    }
+
+		&--html  {
+			background: linear-gradient(45deg, $orange, adjust-hue($orange, 30%));
+		}
+
+		&--sass {
+			background: linear-gradient(45deg, $pink, adjust-hue($pink, 20%));
+		}
+
+		&--js {
+			background: linear-gradient(45deg, darken($yellow, 20%), adjust-hue($yellow, -5%));
+		}
+  }
 }
 
 @media (min-width: 768px) {

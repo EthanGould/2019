@@ -3,6 +3,7 @@
 	height: 100vh;
 	width: 100vw;
 	background: $black;
+	color: $white;
 
 	&--fade {
 		grid-template-columns: 1fr;
@@ -22,24 +23,23 @@
 			top: 0;
 			background: linear-gradient(145deg, $black, rgba($black, 0.8) 30%, transparent);
 		}
+	}
 
-		&--quad {
-			grid-template-columns: 1fr;
-			grid-template-rows: 1fr 1fr 1fr 1fr;
-		}
+	&--quad {
+		grid-template-columns: 1fr;
+		grid-template-rows: auto repeat(4, 1fr);
+		height: auto;
 	}
 
 	&__header {
-		padding: 40px 30px;
-		grid-row-start: 1;
+		padding: 30px 30px;
 	}
 
 	&__header-text {
-		display: inline-block;
+		display: block;
 		margin-bottom: 10px;
 		opacity: 0;
-		color: $white;
-		font-size: 32px;
+		font-size: 28px;
 		transform: scale(0);
 
 		animation-name: fade-in;
@@ -51,6 +51,11 @@
 			animation-delay: 2s;
 		}
 	}
+
+	&__header-subtext {
+		font-size: 16px;
+		line-height: 25px;
+	}
 }
 
 @media (min-width: 768px) {
@@ -58,10 +63,11 @@
 
 		&--quad {
 			grid-template-columns: 1fr 1fr;
-			grid-template-rows: 100px 1fr 1fr;
+			grid-template-rows: auto 1fr 1fr;
 		}
 
 		&__header {
+			grid-column: span 2;
 			padding: 60px 100px;
 		}
 
