@@ -22,9 +22,9 @@ ul {
   25% {
     transform: translateY(0); }
   33% {
-    transform: translateY(-100%); }
+    transform: translateY(-105%); }
   50% {
-    transform: translateY(-100%); }
+    transform: translateY(-105%); }
   58% {
     transform: translateY(-200%); }
   74% {
