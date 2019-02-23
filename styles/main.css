@@ -22,13 +22,13 @@ ul {
   25% {
     transform: translateY(0); }
   33% {
-    transform: translateY(-105%); }
+    transform: translateY(-100%); }
   50% {
-    transform: translateY(-105%); }
+    transform: translateY(-100%); }
   58% {
-    transform: translateY(-200%); }
+    transform: translateY(-205%); }
   74% {
-    transform: translateY(-200%); }
+    transform: translateY(-205%); }
   80% {
     transform: translateY(-300%); }
   100% {
